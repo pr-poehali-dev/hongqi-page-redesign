@@ -351,3 +351,53 @@
 .delay-600 {
   transition-delay: 0.6s;
 }
+
+/* ─── MOBILE 430px ─── */
+@media (max-width: 480px) {
+  .btn-gold,
+  .btn-gold-fill {
+    width: 100%;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  .color-swatch {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+
+/* Sticky bottom CTA — mobile only */
+.mobile-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  padding: 12px 16px;
+  gap: 10px;
+  background: rgba(10, 10, 10, 0.97);
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+@media (max-width: 1024px) {
+  .mobile-sticky-cta {
+    display: flex;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
