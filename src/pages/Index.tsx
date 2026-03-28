@@ -129,7 +129,7 @@ export default function Index() {
     : SPECS.filter((s) => s.category === activeSpecCategory);
 
   return (
-    <div className="min-h-screen pb-[68px] lg:pb-0" style={{ backgroundColor: "var(--obsidian)", color: "#EDE8DE" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "var(--obsidian)", color: "#EDE8DE" }}>
 
       {/* ─── HEADER ─── */}
       <header
@@ -205,48 +205,48 @@ export default function Index() {
             <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-6 reveal" style={{ color: "var(--gold)" }}>
               Новое поколение / 2025
             </p>
-            <h1 className="font-cormorant font-light leading-[0.88] mb-6 reveal delay-100" style={{ fontSize: "clamp(52px, 15vw, 110px)" }}>
+            <h1 className="font-cormorant text-6xl md:text-8xl lg:text-[110px] font-light leading-[0.9] mb-6 reveal delay-100">
               Hongqi<br /><span style={{ color: "var(--gold)" }}>EH7</span>
             </h1>
-            <p className="font-ibm font-light leading-relaxed mb-8 reveal delay-200" style={{ color: "rgba(237,232,222,0.6)", maxWidth: "480px", fontSize: "clamp(14px, 3.5vw, 18px)" }}>
-              Электрический седан, рождённый из столетий имперской эстетики и передовых технологий. 517 л.с. 700 км без остановок.
+            <p className="font-ibm text-base lg:text-lg font-light leading-relaxed mb-10 reveal delay-200" style={{ color: "rgba(237,232,222,0.6)", maxWidth: "480px" }}>
+              Электрический седан, рождённый из столетий имперской эстетики и передовых технологий. 517 лошадиных сил. 700 км без остановок.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 reveal delay-300">
+            <div className="flex flex-col sm:flex-row gap-4 reveal delay-300">
               <button className="btn-gold-fill" onClick={() => setTestDriveOpen(true)}>Записаться на тест-драйв</button>
               <a href="#configurator" className="btn-gold text-center">Конфигуратор</a>
             </div>
           </div>
 
-          <div className="mt-10 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-px reveal delay-400" style={{ borderTop: "1px solid rgba(201,168,76,0.2)" }}>
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px reveal delay-400" style={{ borderTop: "1px solid rgba(201,168,76,0.2)" }}>
             {[
               { v: "517", u: "л.с.", l: "Мощность" },
               { v: "3.9", u: "сек", l: "Разгон 0–100" },
               { v: "700", u: "км", l: "Запас хода" },
-              { v: "26", u: "мин", l: "Зарядка" },
+              { v: "26", u: "мин", l: "Быстрая зарядка" },
             ].map((s, i) => (
-              <div key={i} className="pt-6 pb-3 pr-4 md:pr-8">
+              <div key={i} className="pt-8 pb-4 pr-8">
                 <div className="flex items-baseline gap-1 mb-1">
-                  <span className="font-cormorant font-light" style={{ fontSize: "clamp(36px, 10vw, 60px)" }}>{s.v}</span>
-                  <span className="font-ibm text-xs md:text-sm" style={{ color: "var(--gold)" }}>{s.u}</span>
+                  <span className="font-cormorant text-5xl lg:text-6xl font-light">{s.v}</span>
+                  <span className="font-ibm text-sm" style={{ color: "var(--gold)" }}>{s.u}</span>
                 </div>
-                <p className="font-ibm text-[10px] tracking-widest uppercase" style={{ color: "rgba(237,232,222,0.4)" }}>{s.l}</p>
+                <p className="font-ibm text-xs tracking-widest uppercase" style={{ color: "rgba(237,232,222,0.4)" }}>{s.l}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="hidden md:flex absolute bottom-8 right-8 lg:right-16 flex-col items-center gap-2 z-10">
+        <div className="absolute bottom-8 right-8 lg:right-16 flex flex-col items-center gap-2 z-10">
           <span className="font-ibm text-[10px] tracking-[0.3em] uppercase" style={{ color: "rgba(201,168,76,0.5)", writingMode: "vertical-rl" }}>Прокрутите вниз</span>
           <div className="w-px h-12" style={{ background: "linear-gradient(to bottom, rgba(201,168,76,0.5), transparent)" }} />
         </div>
       </section>
 
       {/* ─── QUOTE ─── */}
-      <section className="py-14 md:py-20 lg:py-32" style={{ backgroundColor: "var(--charcoal)" }}>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: "var(--charcoal)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-px h-12 md:h-16 mx-auto mb-8 md:mb-12 reveal" style={{ background: "linear-gradient(to bottom, transparent, var(--gold))" }} />
-            <blockquote className="font-cormorant font-light italic leading-relaxed reveal delay-100" style={{ fontSize: "clamp(22px, 6vw, 48px)" }}>
+            <div className="w-px h-16 mx-auto mb-12 reveal" style={{ background: "linear-gradient(to bottom, transparent, var(--gold))" }} />
+            <blockquote className="font-cormorant text-3xl md:text-4xl lg:text-5xl font-light italic leading-relaxed reveal delay-100">
               «Красный флаг — не просто автомобиль.<br />Это движение времени вперёд.»
             </blockquote>
             <p className="mt-8 font-ibm text-xs tracking-[0.3em] uppercase reveal delay-200" style={{ color: "var(--gold)" }}>
@@ -257,21 +257,20 @@ export default function Index() {
       </section>
 
       {/* ─── FEATURES ─── */}
-      <section id="features" className="py-14 md:py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
+      <section id="features" className="py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
-          <div className="mb-10 md:mb-16 lg:mb-24">
+          <div className="mb-16 lg:mb-24">
             <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-4 reveal" style={{ color: "var(--gold)" }}>Преимущества модели</p>
-            <h2 className="font-cormorant font-light reveal delay-100" style={{ fontSize: "clamp(36px, 10vw, 72px)" }}>Совершенство<br />в каждой детали</h2>
+            <h2 className="font-cormorant text-5xl lg:text-7xl font-light reveal delay-100">Совершенство<br />в каждой детали</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" style={{ border: "1px solid rgba(201,168,76,0.1)" }}>
             {FEATURES.map((f, i) => (
               <div
                 key={i}
-                className={`p-6 md:p-8 lg:p-10 reveal delay-${(i + 1) * 100} transition-colors duration-300`}
+                className={`p-8 lg:p-10 reveal delay-${(i + 1) * 100} transition-colors duration-300`}
                 style={{
                   backgroundColor: "var(--charcoal)",
                   borderRight: i < 3 ? "1px solid rgba(201,168,76,0.1)" : "none",
-                  borderBottom: "1px solid rgba(201,168,76,0.1)",
                 }}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#161616")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--charcoal)")}
@@ -287,12 +286,12 @@ export default function Index() {
       </section>
 
       {/* ─── MODEL DESCRIPTION ─── */}
-      <section className="py-14 md:py-20 lg:py-32 overflow-hidden" style={{ backgroundColor: "var(--smoke)" }}>
+      <section className="py-20 lg:py-32 overflow-hidden" style={{ backgroundColor: "var(--smoke)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="reveal-left">
               <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-4" style={{ color: "var(--gold)" }}>О модели</p>
-              <h2 className="font-cormorant font-light mb-6 md:mb-8 leading-tight" style={{ fontSize: "clamp(36px, 10vw, 60px)" }}>Архитектура<br />будущего</h2>
+              <h2 className="font-cormorant text-5xl lg:text-6xl font-light mb-8 leading-tight">Архитектура<br />будущего</h2>
               <p className="font-ibm text-base leading-relaxed mb-6" style={{ color: "rgba(237,232,222,0.6)" }}>
                 EH7 построен на эксклюзивной электрической платформе Hongqi — результате более 10 лет исследований. Низкий центр тяжести, идеальная развесовка 50/50 и интеллектуальная воздушная подвеска создают ощущение, которое невозможно описать словами.
               </p>
@@ -319,25 +318,25 @@ export default function Index() {
       </section>
 
       {/* ─── GALLERY ─── */}
-      <section id="gallery" className="py-14 md:py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
+      <section id="gallery" className="py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
-          <div className="flex items-end justify-between mb-8 md:mb-12">
+          <div className="flex items-end justify-between mb-12">
             <div>
-              <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-3 reveal" style={{ color: "var(--gold)" }}>Галерея</p>
-              <h2 className="font-cormorant font-light reveal delay-100" style={{ fontSize: "clamp(40px, 12vw, 72px)" }}>EH7</h2>
+              <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-4 reveal" style={{ color: "var(--gold)" }}>Галерея</p>
+              <h2 className="font-cormorant text-5xl lg:text-7xl font-light reveal delay-100">EH7</h2>
             </div>
-            <button className="btn-gold hidden md:block reveal" style={{ width: "auto" }}>Все фото</button>
+            <button className="btn-gold hidden md:block reveal">Все фото</button>
           </div>
-          <div className="flex flex-col md:grid md:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(201,168,76,0.1)" }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(201,168,76,0.1)" }}>
             <div className="gallery-item md:col-span-2 reveal-scale">
-              <img src={CAR_SIDE} alt="Hongqi EH7" className="w-full object-cover" style={{ aspectRatio: "16/9" }} />
+              <img src={CAR_SIDE} alt="Hongqi EH7" className="w-full aspect-[16/9] md:aspect-[4/3] object-cover" />
             </div>
-            <div className="flex flex-row md:flex-col gap-px">
-              <div className="gallery-item reveal-scale delay-200 flex-1">
-                <img src={CAR_FRONT} alt="Hongqi EH7 спереди" className="w-full h-full object-cover" style={{ minHeight: "160px", maxHeight: "240px" }} />
+            <div className="flex flex-col gap-px">
+              <div className="gallery-item reveal-scale delay-200">
+                <img src={CAR_FRONT} alt="Hongqi EH7 спереди" className="w-full object-cover" style={{ height: "280px" }} />
               </div>
-              <div className="gallery-item reveal-scale delay-300 flex-1">
-                <img src={CAR_INTERIOR} alt="Салон" className="w-full h-full object-cover" style={{ minHeight: "160px", maxHeight: "240px" }} />
+              <div className="gallery-item reveal-scale delay-300">
+                <img src={CAR_INTERIOR} alt="Салон" className="w-full object-cover" style={{ height: "280px" }} />
               </div>
             </div>
           </div>
@@ -345,11 +344,11 @@ export default function Index() {
       </section>
 
       {/* ─── CONFIGURATOR ─── */}
-      <section id="configurator" className="py-14 md:py-20 lg:py-32" style={{ backgroundColor: "var(--charcoal)" }}>
+      <section id="configurator" className="py-20 lg:py-32" style={{ backgroundColor: "var(--charcoal)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
-          <div className="mb-10 lg:mb-16">
+          <div className="mb-12 lg:mb-16">
             <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-4 reveal" style={{ color: "var(--gold)" }}>Конфигуратор</p>
-            <h2 className="font-cormorant font-light reveal delay-100" style={{ fontSize: "clamp(36px, 10vw, 72px)" }}>Создайте<br />свой EH7</h2>
+            <h2 className="font-cormorant text-5xl lg:text-7xl font-light reveal delay-100">Создайте<br />свой EH7</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div className="reveal-left lg:sticky lg:top-24">
@@ -384,13 +383,13 @@ export default function Index() {
                 <p className="font-ibm text-xs tracking-[0.3em] uppercase mb-6" style={{ color: "rgba(237,232,222,0.45)" }}>Комплектация</p>
                 <div className="flex flex-col gap-3">
                   {TRIMS.map((t, i) => (
-                    <div key={i} className="p-4 md:p-5 cursor-pointer transition-all duration-300" style={{ border: t.featured ? "1px solid var(--gold)" : "1px solid rgba(201,168,76,0.2)", backgroundColor: t.featured ? "rgba(201,168,76,0.06)" : "transparent" }}>
-                      <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between mb-3 gap-1">
+                    <div key={i} className="p-5 cursor-pointer transition-all duration-300" style={{ border: t.featured ? "1px solid var(--gold)" : "1px solid rgba(201,168,76,0.2)", backgroundColor: t.featured ? "rgba(201,168,76,0.06)" : "transparent" }}>
+                      <div className="flex items-start justify-between mb-3">
                         <div>
                           <p className="font-cormorant text-xl font-light">{t.name}</p>
                           {t.featured && <span className="font-ibm text-[10px] tracking-widest uppercase" style={{ color: "var(--gold)" }}>Рекомендуем</span>}
                         </div>
-                        <p className="font-ibm text-sm font-light flex-shrink-0" style={{ color: "var(--gold)" }}>{t.price}</p>
+                        <p className="font-ibm text-sm font-light" style={{ color: "var(--gold)" }}>{t.price}</p>
                       </div>
                       <div className="flex gap-6 mb-3">
                         <div>
@@ -418,15 +417,15 @@ export default function Index() {
       </section>
 
       {/* ─── SPECS ─── */}
-      <section id="specs" className="py-14 md:py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
+      <section id="specs" className="py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
-          <div className="mb-8 md:mb-12">
+          <div className="mb-12">
             <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-4 reveal" style={{ color: "var(--gold)" }}>Технические характеристики</p>
-            <h2 className="font-cormorant font-light reveal delay-100" style={{ fontSize: "clamp(36px, 10vw, 72px)" }}>Параметры</h2>
+            <h2 className="font-cormorant text-5xl lg:text-7xl font-light reveal delay-100">Параметры</h2>
           </div>
-          <div className="flex gap-0 mb-8 flex-wrap reveal delay-200" style={{ borderBottom: "1px solid rgba(201,168,76,0.15)" }}>
+          <div className="flex gap-0 mb-10 flex-wrap reveal delay-200" style={{ borderBottom: "1px solid rgba(201,168,76,0.15)" }}>
             {specCategories.map((cat) => (
-              <button key={cat} onClick={() => setActiveSpecCategory(cat)} className="font-ibm tracking-[0.15em] uppercase transition-all duration-200" style={{ fontSize: "clamp(9px, 2.5vw, 12px)", padding: "10px 14px", color: activeSpecCategory === cat ? "var(--gold)" : "rgba(237,232,222,0.4)", borderBottom: activeSpecCategory === cat ? "2px solid var(--gold)" : "2px solid transparent", marginBottom: "-1px" }}>
+              <button key={cat} onClick={() => setActiveSpecCategory(cat)} className="font-ibm text-xs tracking-[0.2em] uppercase px-6 py-4 transition-all duration-200" style={{ color: activeSpecCategory === cat ? "var(--gold)" : "rgba(237,232,222,0.4)", borderBottom: activeSpecCategory === cat ? "2px solid var(--gold)" : "2px solid transparent", marginBottom: "-1px" }}>
                 {cat}
               </button>
             ))}
@@ -443,15 +442,15 @@ export default function Index() {
       </section>
 
       {/* ─── DRIVING EXPERIENCE ─── */}
-      <section className="relative py-20 md:py-32 lg:py-48 overflow-hidden" style={{ backgroundColor: "var(--smoke)" }}>
+      <section className="relative py-32 lg:py-48 overflow-hidden" style={{ backgroundColor: "var(--smoke)" }}>
         <div className="absolute inset-0">
           <img src={CAR_SIDE} alt="" className="w-full h-full object-cover opacity-10" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, var(--smoke) 40%, transparent 100%)" }} />
         </div>
         <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-16">
           <div className="max-w-xl reveal">
-            <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-5" style={{ color: "var(--gold)" }}>Опыт вождения</p>
-            <h2 className="font-cormorant font-light mb-6 md:mb-8 leading-tight" style={{ fontSize: "clamp(36px, 10vw, 72px)" }}>Тишина —<br />это скорость</h2>
+            <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-6" style={{ color: "var(--gold)" }}>Опыт вождения</p>
+            <h2 className="font-cormorant text-5xl lg:text-7xl font-light mb-8 leading-tight">Тишина —<br />это скорость</h2>
             <p className="font-ibm text-base leading-relaxed mb-10" style={{ color: "rgba(237,232,222,0.55)" }}>
               EH7 разгоняется до 100 км/ч за 3,9 секунды без единого звука двигателя. Только ветер, дорога и вы. Интеллектуальная воздушная подвеска адаптируется к любому покрытию в реальном времени.
             </p>
@@ -461,11 +460,11 @@ export default function Index() {
       </section>
 
       {/* ─── CHARGING ─── */}
-      <section className="py-14 md:py-20 lg:py-32" style={{ backgroundColor: "var(--charcoal)" }}>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: "var(--charcoal)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
-          <div className="mb-10 md:mb-16">
+          <div className="mb-16">
             <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-4 reveal" style={{ color: "var(--gold)" }}>Зарядная инфраструктура</p>
-            <h2 className="font-cormorant font-light reveal delay-100" style={{ fontSize: "clamp(36px, 10vw, 72px)" }}>Заряжайтесь<br />везде</h2>
+            <h2 className="font-cormorant text-5xl lg:text-7xl font-light reveal delay-100">Заряжайтесь<br />везде</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ border: "1px solid rgba(201,168,76,0.1)" }}>
             {[
@@ -473,7 +472,7 @@ export default function Index() {
               { icon: "MapPin", title: "2 500+", sub: "Зарядных станций", desc: "Партнёрская сеть охватывает все крупные города и федеральные трассы России." },
               { icon: "Home", title: "22 кВт", sub: "Домашняя зарядка", desc: "Полная зарядка за ночь. Настенная зарядная станция включена в базовую комплектацию." },
             ].map((item, i) => (
-              <div key={i} className={`p-7 md:p-8 lg:p-12 reveal delay-${(i + 1) * 100}`} style={{ backgroundColor: "var(--smoke)", borderRight: i < 2 ? "1px solid rgba(201,168,76,0.1)" : "none", borderBottom: "1px solid rgba(201,168,76,0.1)" }}>
+              <div key={i} className={`p-8 lg:p-12 reveal delay-${(i + 1) * 100}`} style={{ backgroundColor: "var(--smoke)", borderRight: i < 2 ? "1px solid rgba(201,168,76,0.1)" : "none" }}>
                 <Icon name={item.icon} size={32} style={{ color: "var(--gold)", marginBottom: "24px" }} />
                 <div className="font-cormorant text-4xl font-light mb-1">{item.title}</div>
                 <div className="font-ibm text-xs tracking-widest uppercase mb-4" style={{ color: "var(--gold)" }}>{item.sub}</div>
@@ -485,12 +484,12 @@ export default function Index() {
       </section>
 
       {/* ─── SAFETY ─── */}
-      <section className="py-14 md:py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-32 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
             <div className="reveal-left">
               <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-4" style={{ color: "var(--gold)" }}>Безопасность</p>
-              <h2 className="font-cormorant font-light mb-6 md:mb-8 leading-tight" style={{ fontSize: "clamp(36px, 10vw, 60px)" }}>5 звёзд<br />по Euro NCAP</h2>
+              <h2 className="font-cormorant text-5xl lg:text-6xl font-light mb-8 leading-tight">5 звёзд<br />по Euro NCAP</h2>
               <div className="grid grid-cols-1 gap-4">
                 {[
                   { icon: "Eye", title: "360° камеры и радары", desc: "Система кругового обзора с 12 ультразвуковыми датчиками и 5 радарами" },
@@ -515,20 +514,20 @@ export default function Index() {
       </section>
 
       {/* ─── OWNERSHIP ─── */}
-      <section className="py-14 md:py-20 lg:py-32" style={{ backgroundColor: "var(--smoke)" }}>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: "var(--smoke)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
-          <div className="mb-10 md:mb-16 text-center">
+          <div className="mb-16 text-center">
             <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-4 reveal" style={{ color: "var(--gold)" }}>Владение</p>
-            <h2 className="font-cormorant font-light reveal delay-100" style={{ fontSize: "clamp(28px, 7vw, 72px)" }}>Владеть Hongqi —<br />получать всё</h2>
+            <h2 className="font-cormorant text-5xl lg:text-7xl font-light reveal delay-100">Владеть Hongqi — значит<br className="hidden lg:block" /> получать всё</h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: "Award", title: "5 лет гарантии", desc: "Полная гарантия на авто, 8 лет на аккумулятор" },
+              { icon: "Award", title: "5 лет гарантии", desc: "Полная гарантия на автомобиль, 8 лет на аккумулятор" },
               { icon: "Wrench", title: "Бесплатное ТО", desc: "Первые 5 плановых обслуживаний включены в цену" },
               { icon: "Phone", title: "Помощь 24/7", desc: "Выездной сервис и эвакуация в любое время суток" },
               { icon: "RefreshCw", title: "Trade-in", desc: "Выгодный обмен вашего автомобиля любой марки" },
             ].map((item, i) => (
-              <div key={i} className={`p-5 md:p-8 text-center reveal delay-${(i + 1) * 100}`} style={{ border: "1px solid rgba(201,168,76,0.15)", backgroundColor: "var(--charcoal)" }}>
+              <div key={i} className={`p-8 text-center reveal delay-${(i + 1) * 100}`} style={{ border: "1px solid rgba(201,168,76,0.15)", backgroundColor: "var(--charcoal)" }}>
                 <div className="mb-5 flex justify-center"><Icon name={item.icon} size={28} style={{ color: "var(--gold)" }} /></div>
                 <p className="font-cormorant text-xl font-light mb-2">{item.title}</p>
                 <p className="font-ibm text-xs leading-relaxed" style={{ color: "rgba(237,232,222,0.45)" }}>{item.desc}</p>
@@ -539,32 +538,32 @@ export default function Index() {
       </section>
 
       {/* ─── TEST DRIVE CTA ─── */}
-      <section className="relative py-20 md:py-32 lg:py-48 overflow-hidden text-center" style={{ backgroundColor: "var(--charcoal)" }}>
+      <section className="relative py-32 lg:py-48 overflow-hidden text-center" style={{ backgroundColor: "var(--charcoal)" }}>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ opacity: 0.04 }}>
-          <span className="font-cormorant font-light leading-none" style={{ fontSize: "40vw", color: "var(--gold)" }}>红旗</span>
+          <span className="font-cormorant font-light leading-none" style={{ fontSize: "30vw", color: "var(--gold)" }}>红旗</span>
         </div>
         <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-16">
-          <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-5 reveal" style={{ color: "var(--gold)" }}>Не смотрите — ощутите</p>
-          <h2 className="font-cormorant font-light mb-6 md:mb-10 reveal delay-100" style={{ fontSize: "clamp(40px, 12vw, 96px)" }}>Тест-драйв<br />Hongqi EH7</h2>
-          <p className="font-ibm mb-8 md:mb-12 mx-auto reveal delay-200" style={{ color: "rgba(237,232,222,0.5)", maxWidth: "500px", fontSize: "clamp(13px, 3.5vw, 16px)" }}>
+          <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-6 reveal" style={{ color: "var(--gold)" }}>Не смотрите — ощутите</p>
+          <h2 className="font-cormorant text-5xl lg:text-8xl font-light mb-10 reveal delay-100">Тест-драйв<br />Hongqi EH7</h2>
+          <p className="font-ibm text-base mb-12 mx-auto reveal delay-200" style={{ color: "rgba(237,232,222,0.5)", maxWidth: "500px" }}>
             Запишитесь на персональный тест-драйв в ближайшем дилерском центре и убедитесь сами.
           </p>
-          <button className="btn-gold-fill reveal delay-300" style={{ padding: "16px 40px", fontSize: "12px" }} onClick={() => setTestDriveOpen(true)}>
+          <button className="btn-gold-fill text-sm px-16 py-5 reveal delay-300" onClick={() => setTestDriveOpen(true)}>
             Записаться на тест-драйв
           </button>
         </div>
       </section>
 
       {/* ─── DEALERS ─── */}
-      <section className="py-14 md:py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: "var(--obsidian)" }}>
         <div className="max-w-[1920px] mx-auto px-6 lg:px-16">
-          <div className="flex items-end justify-between mb-8 md:mb-12">
+          <div className="flex items-end justify-between mb-12">
             <div>
               <p className="font-ibm text-xs tracking-[0.35em] uppercase mb-4 reveal" style={{ color: "var(--gold)" }}>Дилеры</p>
-              <h2 className="font-cormorant font-light reveal delay-100" style={{ fontSize: "clamp(36px, 10vw, 72px)" }}>Найдите<br />дилера</h2>
+              <h2 className="font-cormorant text-5xl lg:text-7xl font-light reveal delay-100">Найдите<br />дилера</h2>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {[
               { city: "Москва", address: "Ленинградский пр-т, 35", phone: "+7 (495) 000-00-01", hours: "Пн–Вс: 9:00–21:00" },
               { city: "Санкт-Петербург", address: "Пулковское ш., 41", phone: "+7 (812) 000-00-02", hours: "Пн–Вс: 9:00–21:00" },
@@ -638,41 +637,23 @@ export default function Index() {
         </div>
       </footer>
 
-      {/* ─── MOBILE STICKY CTA ─── */}
-      <div className="mobile-sticky-cta">
-        <button
-          className="flex-1 btn-gold text-center"
-          style={{ padding: "14px 12px", fontSize: "11px" }}
-          onClick={() => { const el = document.getElementById("configurator"); el?.scrollIntoView({ behavior: "smooth" }); }}
-        >
-          Конфигуратор
-        </button>
-        <button
-          className="flex-1 btn-gold-fill text-center"
-          style={{ padding: "14px 12px", fontSize: "11px" }}
-          onClick={() => setTestDriveOpen(true)}
-        >
-          Тест-драйв
-        </button>
-      </div>
-
       {/* ─── TEST DRIVE MODAL ─── */}
       {testDriveOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-end md:items-center justify-center md:p-8"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
           style={{ backgroundColor: "rgba(10,10,10,0.94)", backdropFilter: "blur(24px)" }}
           onClick={(e) => { if (e.target === e.currentTarget) setTestDriveOpen(false); }}
         >
-          <div className="w-full md:max-w-lg relative" style={{ border: "1px solid rgba(201,168,76,0.3)", backgroundColor: "var(--charcoal)", maxHeight: "92dvh", overflowY: "auto" }}>
+          <div className="w-full max-w-lg relative" style={{ border: "1px solid rgba(201,168,76,0.3)", backgroundColor: "var(--charcoal)" }}>
             <button className="absolute top-5 right-5 transition-colors" style={{ color: "rgba(237,232,222,0.4)" }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--gold)")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(237,232,222,0.4)")}
               onClick={() => setTestDriveOpen(false)}>
               <Icon name="X" size={20} />
             </button>
-            <div className="p-6 md:p-12">
+            <div className="p-8 md:p-12">
               <p className="font-ibm text-xs tracking-[0.3em] uppercase mb-3" style={{ color: "var(--gold)" }}>Персональный опыт</p>
-              <h3 className="font-cormorant font-light mb-6 md:mb-8" style={{ fontSize: "clamp(28px, 8vw, 40px)" }}>Запись на<br />тест-драйв</h3>
+              <h3 className="font-cormorant text-4xl font-light mb-8">Запись на<br />тест-драйв</h3>
               <div className="flex flex-col gap-4">
                 {[
                   { key: "name", label: "Имя", type: "text", placeholder: "Ваше имя" },
